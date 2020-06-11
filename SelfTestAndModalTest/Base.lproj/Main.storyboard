@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0aP-Us-Xdj">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,141 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="SelfTestAndModalTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4n-Oj-EwA">
+                                <rect key="frame" x="181.5" y="320" width="51" height="33"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Modal"/>
+                                <connections>
+                                    <action selector="modal" destination="BYZ-38-t0r" eventType="touchUpInside" id="WI0-8p-K1D"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNr-p8-mdo">
+                                <rect key="frame" x="186" y="384" width="42" height="33"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Push">
+                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="push" destination="BYZ-38-t0r" eventType="touchUpInside" id="vYS-g1-Hnx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3m-Hc-8YJ">
+                                <rect key="frame" x="156.5" y="442" width="101" height="33"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Close Modal">
+                                    <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissAnimated" destination="BYZ-38-t0r" eventType="touchUpInside" id="UHa-jf-u2a"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4wW-cW-hBp">
+                                <rect key="frame" x="142" y="535" width="130" height="33"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="DissmissToRoot">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissAnimated" destination="BYZ-38-t0r" eventType="touchUpInside" id="RHK-f7-0uW"/>
+                                    <action selector="dismissToRoot" destination="BYZ-38-t0r" eventType="touchUpInside" id="H35-j7-CT5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Y3m-Hc-8YJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="47n-8I-Lha"/>
+                            <constraint firstItem="4wW-cW-hBp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JMn-El-wKl"/>
+                            <constraint firstItem="DNr-p8-mdo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LO5-Ky-kom"/>
+                            <constraint firstItem="i4n-Oj-EwA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZML-YL-fMD"/>
+                            <constraint firstItem="Y3m-Hc-8YJ" firstAttribute="top" secondItem="DNr-p8-mdo" secondAttribute="bottom" constant="25" id="gpu-t4-P7r"/>
+                            <constraint firstItem="i4n-Oj-EwA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="232" id="hHe-EV-bsi"/>
+                            <constraint firstItem="DNr-p8-mdo" firstAttribute="top" secondItem="i4n-Oj-EwA" secondAttribute="bottom" constant="31" id="naM-Aw-fvT"/>
+                            <constraint firstItem="4wW-cW-hBp" firstAttribute="top" secondItem="Y3m-Hc-8YJ" secondAttribute="bottom" constant="60" id="vfl-g2-Q6p"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="aBH-iK-u8b"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="137.94642857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QDF-NV-0Zl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0aP-Us-Xdj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="F9k-UJ-ftR">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Zfy-gu-9a5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Em-bO-dkX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
+        </scene>
+        <!--View Controller2-->
+        <scene sceneID="d5L-IA-mXg">
+            <objects>
+                <viewController storyboardIdentifier="ViewController2" id="u9b-be-z8S" customClass="ViewController2" customModule="SelfTestAndModalTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LGc-Cd-GbN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRW-Dk-yzn">
+                                <rect key="frame" x="181.5" y="276" width="51" height="33"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Modal"/>
+                                <connections>
+                                    <action selector="modal" destination="u9b-be-z8S" eventType="touchUpInside" id="fxW-nl-17s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZk-Kz-7nI">
+                                <rect key="frame" x="186" y="340" width="42" height="33"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Push">
+                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="push" destination="u9b-be-z8S" eventType="touchUpInside" id="11T-Ic-Qk1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbF-u2-BgX">
+                                <rect key="frame" x="156.5" y="398" width="101" height="33"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Close Modal">
+                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissAnimated" destination="u9b-be-z8S" eventType="touchUpInside" id="mUM-aS-J6x"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="KbF-u2-BgX" firstAttribute="top" secondItem="GZk-Kz-7nI" secondAttribute="bottom" constant="25" id="BXl-QT-xp1"/>
+                            <constraint firstItem="KbF-u2-BgX" firstAttribute="centerX" secondItem="LGc-Cd-GbN" secondAttribute="centerX" id="Rh9-oa-wyQ"/>
+                            <constraint firstItem="GZk-Kz-7nI" firstAttribute="top" secondItem="fRW-Dk-yzn" secondAttribute="bottom" constant="31" id="TvS-bj-oMw"/>
+                            <constraint firstItem="fRW-Dk-yzn" firstAttribute="top" secondItem="UEC-aD-RuE" secondAttribute="top" constant="232" id="cKl-1Z-7dE"/>
+                            <constraint firstItem="GZk-Kz-7nI" firstAttribute="centerX" secondItem="LGc-Cd-GbN" secondAttribute="centerX" id="gus-Jd-6yg"/>
+                            <constraint firstItem="fRW-Dk-yzn" firstAttribute="centerX" secondItem="LGc-Cd-GbN" secondAttribute="centerX" id="uii-ZB-DdM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UEC-aD-RuE"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1K6-iL-gqJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d8E-i3-LPw" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1770" y="138"/>
         </scene>
     </scenes>
 </document>
