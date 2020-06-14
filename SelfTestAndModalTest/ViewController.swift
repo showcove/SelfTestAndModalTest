@@ -16,6 +16,8 @@ class ViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        self.title = "ababababfdafafafdfdafad"
     }
 }
 
@@ -24,6 +26,7 @@ class ViewController: BaseViewController {
 extension ViewController {
     @IBAction func push() {
         let newVC = UIViewController.viewControllerFromMainStoryboard(identifier: ViewController.storyboardIdentifier)
+//        newVC.navigationItem.title = "Abalfjdsalkfjllakfj"
         if let nav = self.navigationController {
             nav.pushViewController(newVC, animated: true)
         }
@@ -57,8 +60,20 @@ extension ViewController {
                 
             }
         }
-        
     }
+    
+    @IBAction func makeLeftButton() {
+        self.navigationItem.setLeftBarButtonItems([UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)], animated: true)
+        
+        self.navigationItem.setRightBarButtonItems([UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)], animated: true)
+    }
+    
+    @IBAction func clearLeftButton() {
+        let fixed = [UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)]
+        self.navigationItem.setLeftBarButtonItems(nil, animated: true)
+        self.navigationItem.setRightBarButtonItems(nil, animated: true)
+    }
+    
     
     func doSomething(then: @escaping () -> Void) {
         then()

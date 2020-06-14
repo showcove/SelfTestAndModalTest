@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0aP-Us-Xdj">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4n-Oj-EwA">
-                                <rect key="frame" x="181.5" y="320" width="51" height="33"/>
+                                <rect key="frame" x="181.5" y="108" width="51" height="33"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Modal"/>
                                 <connections>
@@ -24,7 +25,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNr-p8-mdo">
-                                <rect key="frame" x="186" y="384" width="42" height="33"/>
+                                <rect key="frame" x="186" y="172" width="42" height="33"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Push">
                                     <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -34,7 +35,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3m-Hc-8YJ">
-                                <rect key="frame" x="156.5" y="442" width="101" height="33"/>
+                                <rect key="frame" x="156.5" y="230" width="101" height="33"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Close Modal">
                                     <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -44,7 +45,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4wW-cW-hBp">
-                                <rect key="frame" x="142" y="535" width="130" height="33"/>
+                                <rect key="frame" x="142" y="323" width="130" height="33"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="DissmissToRoot">
                                     <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -54,17 +55,41 @@
                                     <action selector="dismissToRoot" destination="BYZ-38-t0r" eventType="touchUpInside" id="H35-j7-CT5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Mk-R4-R8q">
+                                <rect key="frame" x="165" y="427" width="84" height="33"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="delete left">
+                                    <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearLeftButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="2WJ-tT-NAu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0I-Rv-ML4">
+                                <rect key="frame" x="169" y="386" width="76" height="33"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="make left">
+                                    <color key="titleColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="makeLeftButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="P0P-g6-41o"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Y3m-Hc-8YJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="47n-8I-Lha"/>
+                            <constraint firstItem="R0I-Rv-ML4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FOb-xm-YLU"/>
                             <constraint firstItem="4wW-cW-hBp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JMn-El-wKl"/>
                             <constraint firstItem="DNr-p8-mdo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LO5-Ky-kom"/>
+                            <constraint firstItem="R0I-Rv-ML4" firstAttribute="top" secondItem="4wW-cW-hBp" secondAttribute="bottom" constant="30" id="QMV-Fw-c8k"/>
                             <constraint firstItem="i4n-Oj-EwA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZML-YL-fMD"/>
                             <constraint firstItem="Y3m-Hc-8YJ" firstAttribute="top" secondItem="DNr-p8-mdo" secondAttribute="bottom" constant="25" id="gpu-t4-P7r"/>
-                            <constraint firstItem="i4n-Oj-EwA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="232" id="hHe-EV-bsi"/>
+                            <constraint firstItem="i4n-Oj-EwA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="hHe-EV-bsi"/>
                             <constraint firstItem="DNr-p8-mdo" firstAttribute="top" secondItem="i4n-Oj-EwA" secondAttribute="bottom" constant="31" id="naM-Aw-fvT"/>
+                            <constraint firstItem="3Mk-R4-R8q" firstAttribute="top" secondItem="R0I-Rv-ML4" secondAttribute="bottom" constant="8" id="vXs-72-mnH"/>
                             <constraint firstItem="4wW-cW-hBp" firstAttribute="top" secondItem="Y3m-Hc-8YJ" secondAttribute="bottom" constant="60" id="vfl-g2-Q6p"/>
+                            <constraint firstItem="3Mk-R4-R8q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xfK-mj-VBC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
