@@ -17,7 +17,17 @@ class ViewController: BaseViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        self.title = "ababababfdafafafdfdafad"
+        self.title = "abfk;lfkd;lakl;adjlkffafdffdafajfd"
+		
+
+		
+		
+		
+		if #available(iOS 12, *) {
+			print("version : 12 or greater")
+		} else {
+			print("version : 11 or smaller")
+		}
     }
 }
 
@@ -63,15 +73,15 @@ extension ViewController {
     }
     
     @IBAction func makeLeftButton() {
-        self.navigationItem.setLeftBarButtonItems([UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)], animated: true)
+//        self.navigationItem.setLeftBarButtonItems([UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)], animated: true)
         
         self.navigationItem.setRightBarButtonItems([UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)], animated: true)
     }
     
     @IBAction func clearLeftButton() {
         let fixed = [UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)]
-        self.navigationItem.setLeftBarButtonItems(nil, animated: true)
-        self.navigationItem.setRightBarButtonItems(nil, animated: true)
+//        self.navigationItem.setLeftBarButtonItems(nil, animated: true)
+		self.navigationItem.setRightBarButtonItems(nil, animated: true)
     }
     
     
