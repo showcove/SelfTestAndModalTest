@@ -12,16 +12,14 @@ class ViewController: BaseViewController {
     
     var action: (() -> Void)?
     var a: Int = 0
+    let urlIncludingSharp = "https://m.mizsarang.com/#/redirect?p=hpmz&utm_source=banksalad&utm_medium=display&utm_campaign=hpmz_mo&utm_term=%EB%A6%AC%EC%8A%A4%ED%8A%B8_cpc&utm_content=%EB%8B%A4%EC%9D%B4%EB%A0%89%ED%8A%B8%EC%97%B0%EA%B2%B0"
+    let urlDaum = "https://www.daum.net"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        self.title = "abfk;lfkd;lakl;adjlkffafdffdafajfd"
-		
-
-		
-		
+        self.title = "시작화면, 시작화면, 시작화면, 시작화면"
 		
 		if #available(iOS 12, *) {
 			print("version : 12 or greater")
@@ -31,9 +29,47 @@ class ViewController: BaseViewController {
     }
 }
 
+//MARK: - Load WebView
+extension ViewController {
+    func loadURL(urlString: String?) {
+        if let urlString = urlString, let url = URL(string: urlString) {
+            let webVC: WebViewController = UIViewController.viewControllerFromMainStoryboard(identifier: WebViewController.storyboardIdentifier) as! WebViewController
+            
+            webVC.targetUrl = url
+            
+            if let nav = self.navigationController {
+                nav.pushViewController(webVC, animated: true)
+            }
+            
+        }
+    }
+    
+    func loadURL2(urlString: String?) {
+        if let urlString = urlString, let url = URL(string: urlString) {
+            let webVC = UIViewController.viewControllerFromMainStoryboard(identifier: WebViewController_2.storyboardIdentifier) as! WebViewController_2
+            
+            webVC.targetUrl = url
+            
+            if let nav = self.navigationController {
+                nav.pushViewController(webVC, animated: true)
+            }
+            
+        }
+    }
+}
+
 
 //MARK: - IB Actions
 extension ViewController {
+    @IBAction func pushWebVC() {
+        loadURL(urlString: urlIncludingSharp)
+    }
+    
+    @IBAction func pushWebVC2() {
+        loadURL2(urlString: urlIncludingSharp)
+    }
+    
+    
     @IBAction func push() {
         let newVC = UIViewController.viewControllerFromMainStoryboard(identifier: ViewController.storyboardIdentifier)
 //        newVC.navigationItem.title = "Abalfjdsalkfjllakfj"
@@ -83,6 +119,8 @@ extension ViewController {
 //        self.navigationItem.setLeftBarButtonItems(nil, animated: true)
 		self.navigationItem.setRightBarButtonItems(nil, animated: true)
     }
+    
+    
     
     
     func doSomething(then: @escaping () -> Void) {
