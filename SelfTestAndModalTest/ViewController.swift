@@ -19,7 +19,9 @@ class ViewController: BaseViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        self.title = "시작화면, 시작화면, 시작화면, 시작화면"
+		if navigationItem.title == nil {
+			self.navigationItem.title = "시작화면 타이틀"
+		}
 		
 		if #available(iOS 12, *) {
 			print("version : 12 or greater")
@@ -33,7 +35,7 @@ class ViewController: BaseViewController {
 extension ViewController {
     func loadURL(urlString: String?) {
         if let urlString = urlString, let url = URL(string: urlString) {
-            let webVC: WebViewController = UIViewController.viewControllerFromMainStoryboard(identifier: WebViewController.storyboardIdentifier) as! WebViewController
+			let webVC: WebViewController = UIViewController.viewControllerFromMainStoryboard(type: WebViewController.self)
             
             webVC.targetUrl = url
             
@@ -46,7 +48,7 @@ extension ViewController {
     
     func loadURL2(urlString: String?) {
         if let urlString = urlString, let url = URL(string: urlString) {
-            let webVC = UIViewController.viewControllerFromMainStoryboard(identifier: WebViewController_2.storyboardIdentifier) as! WebViewController_2
+			let webVC = UIViewController.viewControllerFromMainStoryboard(type: WebViewController_2.self)
             
             webVC.targetUrl = url
             
@@ -71,15 +73,16 @@ extension ViewController {
     
     
     @IBAction func push() {
-        let newVC = UIViewController.viewControllerFromMainStoryboard(identifier: ViewController.storyboardIdentifier)
-//        newVC.navigationItem.title = "Abalfjdsalkfjllakfj"
+        let newVC = UIViewController.viewControllerFromMainStoryboard(type: ViewController.self)
+		newVC.navigationItem.title = "다음화면 타이틀"
+		
         if let nav = self.navigationController {
             nav.pushViewController(newVC, animated: true)
         }
     }
     
     @IBAction func modal() {
-        let newVC = UIViewController.viewControllerFromMainStoryboard(identifier: ViewController.storyboardIdentifier)
+        let newVC = UIViewController.viewControllerFromMainStoryboard(type: ViewController.self)
         let nav = UINavigationController(rootViewController: newVC)
         nav.modalPresentationStyle = .fullScreen
         self.present(nav, animated: true) {
@@ -103,33 +106,25 @@ extension ViewController {
         
         if let finalRootVC = rootVC {
             finalRootVC.dismiss(animated: true) {
-                
+				if let nav = finalRootVC.navigationController {
+					nav.popToRootViewController(animated: true)
+				} else if let selfNav = finalRootVC as? UINavigationController {
+					selfNav.popToRootViewController(animated: true)
+				}
             }
         }
     }
     
     @IBAction func makeLeftButton() {
-//        self.navigationItem.setLeftBarButtonItems([UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)], animated: true)
+        self.navigationItem.setLeftBarButtonItems([UIBarButtonItem(barButtonSystemItem: .camera, target: nil, action: nil)], animated: true)
         
-        self.navigationItem.setRightBarButtonItems([UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)], animated: true)
+//        self.navigationItem.setRightBarButtonItems([UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)], animated: true)
     }
     
     @IBAction func clearLeftButton() {
         let fixed = [UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)]
-//        self.navigationItem.setLeftBarButtonItems(nil, animated: true)
-		self.navigationItem.setRightBarButtonItems(nil, animated: true)
-    }
-    
-    
-    
-    
-    func doSomething(then: @escaping () -> Void) {
-        then()
-        
-    }
-    
-    func printPapa() {
-        print("papa")
+        self.navigationItem.setLeftBarButtonItems(nil, animated: true)
+//		self.navigationItem.setRightBarButtonItems(nil, animated: true)
     }
     
     func process(completion: @escaping (Int) -> Void) {
